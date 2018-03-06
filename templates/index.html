@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
-    <title>Het Huis: Projectie App</title>
- 
- 
+    <title>Het Huis: {{title}}</title>
+
+
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
- 
+
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
     <link href="../static/signup.css" rel="stylesheet">
-    <script src="../static/js/jquery.js"></script>
-    <script src="../static/js/signup.js"></script>
- 
+
+
 </head>
- 
+
 <body>
- 
+
     <div class="container">
-        
- 
+
+
         <div class="jumbotron">
             <img src="../static/img/hethuislogo.jpg"><br>
-            <h1>Projectie App</h1>
+            <h1>{{ title }}</h1>
             
-    <form class="form-signin">
+            <form class="form-signin" method="post">
+                <label for="inputName1" class="sr-only">Name 1</label>
+                <input type="name" name="name1" id="name1" class="form-control" placeholder="Name 1" value="{{request.form.name1}}"  autofocus><br>
+                <label for="inputName2" class="sr-only">Name 2</label>
+                <input type="name" name="name2" id="name2" class="form-control" placeholder="Name 2" value="{{request.form.name2}}"  autofocus><br>
+                <label for="inputName3" class="sr-only">Name 3</label>
+                <input type="name" name="name3" id="name3" class="form-control" placeholder="Name 3" value="{{request.form.name3}}" autofocus><br>
+                <label for="inputName4" class="sr-only">Name 4</label>
+                <input type="name" name="name4" id="name4" class="form-control" placeholder="Name 4" value="{{request.form.name4}}"  autofocus><br>
 
-        <label for="inputName1" class="sr-only">Name 1</label>
-        <input type="name" name="inputName1" id="inputName1" class="form-control" placeholder="Name 1" required autofocus><br>
-        <label for="inputName2" class="sr-only">Name 2</label>
-        <input type="name" name="inputName2" id="inputName2" class="form-control" placeholder="Name 2" required autofocus><br>
-        <label for="inputName3" class="sr-only">Name 3</label>
-        <input type="name" name="inputName3" id="inputName3" class="form-control" placeholder="Name 3" required autofocus><br>
-        <label for="inputName4" class="sr-only">Name 4</label>
-        <input type="name" name="inputName4" id="inputName4" class="form-control" placeholder="Name 4" required autofocus><br>
+                <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit">Post</button>
+            </form>
 
-        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Post</button>
 
-    </form>
         </div>
- 
+        <div class="row marketing">
+            <div class="col-lg-4"></div><div class="col-lg-4">
+            <h3>{{postText}}</h3></div>
+            <div class="col-lg-4"></div>
+        </div>
         <div class="row marketing">
             <div class="col-lg-6">
-                <h4>Bucket List</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
- 
-                <h4>Bucket List</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
- 
-                <h4>Bucket List</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                <h4>{{ title }}</h4>
+                <p>In deze app kunt u de text aanpassen die word geprojecteerd</p>
+
+                
+                <p>Voer de namen in en klik op post</p>
+
+                
             </div>
- 
+
             <div class="col-lg-6">
-                <h4>Bucket List</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
- 
-                <h4>Bucket List</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
- 
-                <h4>Bucket List</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+
+                <h4>{{contactH}}</h4>
+                <p>{{contactP}}</p>
+        
+                <p>{{error}}</p>
             </div>
         </div>
- 
+        
+
+
         <footer class="footer">
-            <p>&copy; Company 2015</p>
+            <p>&copy; VirtualHuman</p>
         </footer>
- 
+
     </div>
 </body>
- 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="../static/js/signup.js"></script> -->
 </html>
